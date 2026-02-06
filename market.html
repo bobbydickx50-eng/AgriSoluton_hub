@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Updates - AgriSolutions Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-seedling logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>AgriSolutions Hub</h1>
+                        <p>Sokoine University of Agriculture</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                        <li><a href="market.html" class="active"><i class="fas fa-chart-line"></i> Market</a></li>
+                        <li><a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Place Order</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn-signup" id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero" style="background: linear-gradient(rgba(30,86,49,0.9), rgba(30,86,49,0.9)), url('assets/images/market-hero.jpg');">
+        <div class="container">
+            <h1>Market Price Updates</h1>
+            <p>Real-time agricultural commodity prices and trends</p>
+        </div>
+    </section>
+
+    <section class="market-updates">
+        <div class="container">
+            <div class="market-header">
+                <h2 class="section-title">Current Market Prices (TZS/Kg)</h2>
+                <div class="market-controls">
+                    <button class="btn-refresh" id="refreshPrices">
+                        <i class="fas fa-sync-alt"></i> Refresh Prices
+                    </button>
+                    <span class="last-update">Last updated: <span id="lastUpdateTime">Just now</span></span>
+                </div>
+            </div>
+            
+            <div class="market-filters">
+                <button class="filter-btn active" data-filter="all">All Commodities</button>
+                <button class="filter-btn" data-filter="grains">Grains</button>
+                <button class="filter-btn" data-filter="cash">Cash Crops</button>
+                <button class="filter-btn" data-filter="vegetables">Vegetables</button>
+            </div>
+            
+            <div class="market-table-container">
+                <table class="market-table" id="marketTable">
+                    <thead>
+                        <tr>
+                            <th>Commodity</th>
+                            <th>Current Price</th>
+                            <th>Change</th>
+                            <th>Market</th>
+                            <th>Trend (7 Days)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-category="grains">
+                            <td><i class="fas fa-corn"></i> Maize</td>
+                            <td>1,250</td>
+                            <td class="price-up">+2.5%</td>
+                            <td>Arusha</td>
+                            <td><div class="trend-up">↗</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="grains">
+                            <td><i class="fas fa-rice"></i> Rice</td>
+                            <td>3,200</td>
+                            <td class="price-down">-1.2%</td>
+                            <td>Mbeya</td>
+                            <td><div class="trend-down">↘</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="grains">
+                            <td><i class="fas fa-seedling"></i> Beans</td>
+                            <td>2,800</td>
+                            <td class="price-up">+3.7%</td>
+                            <td>Morogoro</td>
+                            <td><div class="trend-up">↗</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="cash">
+                            <td><i class="fas fa-mug-hot"></i> Coffee</td>
+                            <td>8,500</td>
+                            <td class="price-up">+5.1%</td>
+                            <td>Kilimanjaro</td>
+                            <td><div class="trend-up">↗</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="cash">
+                            <td><i class="fas fa-nut"></i> Cashew Nuts</td>
+                            <td>6,200</td>
+                            <td class="price-up">+1.8%</td>
+                            <td>Mtwara</td>
+                            <td><div class="trend-stable">→</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="cash">
+                            <td><i class="fas fa-leaf"></i> Tea</td>
+                            <td>3,800</td>
+                            <td class="price-down">-0.5%</td>
+                            <td>Njombe</td>
+                            <td><div class="trend-stable">→</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="vegetables">
+                            <td><i class="fas fa-carrot"></i> Tomatoes</td>
+                            <td>1,800</td>
+                            <td class="price-up">+4.2%</td>
+                            <td>Dar es Salaam</td>
+                            <td><div class="trend-up">↗</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                        <tr data-category="vegetables">
+                            <td><i class="fas fa-pepper-hot"></i> Onions</td>
+                            <td>2,100</td>
+                            <td class="price-up">+2.1%</td>
+                            <td>Dodoma</td>
+                            <td><div class="trend-up">↗</div></td>
+                            <td><button class="btn-buy">Buy/Sell</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="market-info">
+                <p><i class="fas fa-info-circle"></i> Prices are updated every 30 minutes. Data sourced from Tanzania Agricultural Marketing Cooperatives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="price-chart">
+        <div class="container">
+            <h2 class="section-title">Price Trends (Last 30 Days)</h2>
+            <div class="chart-container">
+                <div class="chart-placeholder">
+                    <div class="chart-legend">
+                        <span class="legend-maize"><i class="fas fa-circle"></i> Maize</span>
+                        <span class="legend-rice"><i class="fas fa-circle"></i> Rice</span>
+                        <span class="legend-coffee"><i class="fas fa-circle"></i> Coffee</span>
+                    </div>
+                    <div class="chart-visual">
+                        <!-- Chart would be rendered here with Chart.js -->
+                        <p>Interactive Price Chart Visualization</p>
+                        <p>Shows price trends for major commodities over past month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="global-market" id="global" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Global Market Opportunities</h2>
+            <div class="opportunities-grid">
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <i class="fas fa-globe-europe"></i>
+                        <h3>European Union</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <h4>Export Opportunities</h4>
+                        <ul>
+                            <li>Organic Coffee & Tea</li>
+                            <li>Spices (Cloves, Pepper)</li>
+                            <li>Fresh Fruits & Vegetables</li>
+                            <li>Cashew Nuts</li>
+                        </ul>
+                        <p><strong>Requirements:</strong> Organic certification, EU quality standards</p>
+                        <a href="order.html" class="btn-export">Explore Export →</a>
+                    </div>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>Asian Markets</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <h4>Export Opportunities</h4>
+                        <ul>
+                            <li>Sesame Seeds</li>
+                            <li>Cashew Nuts (Processed)</li>
+                            <li>Beans & Pulses</li>
+                            <li>Seaweed</li>
+                        </ul>
+                        <p><strong>Markets:</strong> China, Japan, India, Middle East</p>
+                        <a href="order.html" class="btn-export">Explore Export →</a>
+                    </div>
+                </div>
+                
+                <div class="opportunity-card">
+                    <div class="opportunity-header">
+                        <i class="fas fa-globe-americas"></i>
+                        <h3>American Markets</h3>
+                    </div>
+                    <div class="opportunity-content">
+                        <h4>Export Opportunities</h4>
+                        <ul>
+                            <li>Specialty Coffee</li>
+                            <li>Cocoa & Chocolate</li>
+                            <li>Vanilla</li>
+                            <li>Shea Butter</li>
+                        </ul>
+                        <p><strong>Markets:</strong> USA, Canada, Brazil</p>
+                        <a href="order.html" class="btn-export">Explore Export →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="export-support">
+        <div class="container">
+            <h2 class="section-title">Export Support Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Documentation</h3>
+                    <p>Help with export documents, certificates, and compliance requirements.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ship"></i>
+                    <h3>Logistics</h3>
+                    <p>Shipping, freight forwarding, and customs clearance assistance.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certification</h3>
+                    <p>Support for organic, fair trade, and quality certifications.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Market Connection</h3>
+                    <p>Connect with verified international buyers and distributors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgriSolutions Hub</h3>
+                    <p>An educational project by David Bablo Mushii (DIT/E/2024/0021) from Sokoine University of Agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="market.html">Market Updates</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> SUA Mazimbu, Morogoro</li>
+                        <li><i class="fas fa-phone"></i> +255 748 550 225</li>
+                        <li><i class="fas fa-envelope"></i> info@agrisolutionshub.com</li>
+                        <li><i class="fas fa-user-graduate"></i> David Bablo Mushii</li>
+                        <li><i class="fas fa-id-card"></i> DIT/E/2024/0021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriSolutions Hub. Educational Project for Sokoine University of Agriculture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Order - AgriSolutions Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-seedling logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>AgriSolutions Hub</h1>
+                        <p>Sokoine University of Agriculture</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                        <li><a href="market.html"><i class="fas fa-chart-line"></i> Market</a></li>
+                        <li><a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="order.html" class="active btn-order"><i class="fas fa-shopping-cart"></i> Place Order</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn-signup" id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero" style="background: linear-gradient(rgba(30,86,49,0.9), rgba(30,86,49,0.9)), url('assets/images/order-hero.jpg');">
+        <div class="container">
+            <h1>Place Your Order</h1>
+            <p>Order agricultural products and services easily</p>
+        </div>
+    </section>
+
+    <section class="order-process">
+        <div class="container">
+            <div class="process-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Select Products</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Enter Details</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Review & Pay</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Confirmation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-content">
+        <div class="container">
+            <div class="order-grid">
+                <div class="product-selection">
+                    <h2 class="section-title">Select Products</h2>
+                    
+                    <div class="product-categories">
+                        <button class="category-btn active" data-category="all">All Products</button>
+                        <button class="category-btn" data-category="grains">Grains</button>
+                        <button class="category-btn" data-category="cash">Cash Crops</button>
+                        <button class="category-btn" data-category="vegetables">Vegetables</button>
+                        <button class="category-btn" data-category="equipment">Equipment</button>
+                        <button class="category-btn" data-category="seeds">Seeds</button>
+                    </div>
+                    
+                    <div class="products-grid">
+                        <div class="product-card" data-category="grains">
+                            <div class="product-image">
+                                <i class="fas fa-corn"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Maize (Premium Quality)</h3>
+                                <p class="product-price">TZS 1,250 / kg</p>
+                                <p class="product-stock">Stock: 5,000 kg available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="5000">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">kg</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="grains">
+                            <div class="product-image">
+                                <i class="fas fa-rice"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Rice (Super Grade)</h3>
+                                <p class="product-price">TZS 3,200 / kg</p>
+                                <p class="product-stock">Stock: 2,500 kg available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="2500">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">kg</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="cash">
+                            <div class="product-image">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Coffee Beans (Arabica)</h3>
+                                <p class="product-price">TZS 8,500 / kg</p>
+                                <p class="product-stock">Stock: 1,000 kg available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="1000">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">kg</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="cash">
+                            <div class="product-image">
+                                <i class="fas fa-nut"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Cashew Nuts (Raw)</h3>
+                                <p class="product-price">TZS 6,200 / kg</p>
+                                <p class="product-stock">Stock: 800 kg available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="800">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">kg</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="equipment">
+                            <div class="product-image">
+                                <i class="fas fa-tractor"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Small Tractor</h3>
+                                <p class="product-price">TZS 12,500,000</p>
+                                <p class="product-stock">Stock: 3 units available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="3">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">units</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card" data-category="seeds">
+                            <div class="product-image">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Hybrid Maize Seeds</h3>
+                                <p class="product-price">TZS 5,000 / kg</p>
+                                <p class="product-stock">Stock: 200 kg available</p>
+                                <div class="product-quantity">
+                                    <button class="quantity-btn minus">-</button>
+                                    <input type="number" class="quantity-input" value="0" min="0" max="200">
+                                    <button class="quantity-btn plus">+</button>
+                                    <span class="quantity-unit">kg</span>
+                                </div>
+                                <button class="btn-add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h2 class="section-title">Order Summary</h2>
+                        
+                        <div class="cart-items" id="cartItems">
+                            <div class="cart-empty">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>Your cart is empty</p>
+                                <p>Add products from the left panel</p>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span class="summary-value">TZS 0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span class="summary-value">TZS 15,000</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (18%)</span>
+                                <span class="summary-value">TZS 0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total Amount</span>
+                                <span class="summary-value">TZS 15,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="order-actions">
+                            <button class="btn-clear-cart" id="clearCart">
+                                <i class="fas fa-trash"></i> Clear Cart
+                            </button>
+                            <button class="btn-checkout" id="checkoutBtn">
+                                <i class="fas fa-lock"></i> Proceed to Checkout
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <h3><i class="fas fa-shipping-fast"></i> Shipping Information</h3>
+                        <ul>
+                            <li><strong>Domestic Shipping:</strong> 3-5 business days</li>
+                            <li><strong>International Shipping:</strong> 7-14 business days</li>
+                            <li><strong>Free Shipping:</strong> Orders above TZS 500,000</li>
+                            <li><strong>Delivery Areas:</strong> Nationwide coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkout-form" id="checkoutForm" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Checkout Details</h2>
+            <form id="orderForm" action="php/order.php" method="POST">
+                <div class="checkout-grid">
+                    <div class="checkout-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        <div class="form-group">
+                            <label for="orderName">Full Name *</label>
+                            <input type="text" id="orderName" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderEmail">Email Address *</label>
+                                <input type="email" id="orderEmail" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderPhone">Phone Number *</label>
+                                <input type="tel" id="orderPhone" name="phone" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Shipping Address</h3>
+                        <div class="form-group">
+                            <label for="orderAddress">Street Address *</label>
+                            <input type="text" id="orderAddress" name="address" placeholder="Enter street address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderCity">City *</label>
+                                <input type="text" id="orderCity" name="city" placeholder="Enter city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderRegion">Region *</label>
+                                <select id="orderRegion" name="region" required>
+                                    <option value="">Select Region</option>
+                                    <option value="morogoro">Morogoro</option>
+                                    <option value="dar">Dar es Salaam</option>
+                                    <option value="arusha">Arusha</option>
+                                    <option value="mbeya">Mbeya</option>
+                                    <option value="dodoma">Dodoma</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderPostal">Postal Code</label>
+                                <input type="text" id="orderPostal" name="postal" placeholder="Postal code">
+                            </div>
+                            <div class="form-group">
+                                <label for="orderCountry">Country *</label>
+                                <select id="orderCountry" name="country" required>
+                                    <option value="tz" selected>Tanzania</option>
+                                    <option value="ke">Kenya</option>
+                                    <option value="ug">Uganda</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-section">
+                        <h3><i class="fas fa-credit-card"></i> Payment Method</h3>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="mpesa" checked>
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>M-Pesa</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="bank">
+                                <i class="fas fa-university"></i>
+                                <span>Bank Transfer</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cod">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cash on Delivery</span>
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="orderNotes">Order Notes</label>
+                            <textarea id="orderNotes" name="notes" placeholder="Special instructions for your order"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkout-actions">
+                    <button type="button" class="btn-back" id="backToCart">
+                        <i class="fas fa-arrow-left"></i> Back to Cart
+                    </button>
+                    <button type="submit" class="btn-submit-order">
+                        <i class="fas fa-check-circle"></i> Place Order
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="order-confirmation" id="orderConfirmation" style="display: none;">
+        <div class="container">
+            <div class="confirmation-card">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Order Placed Successfully!</h2>
+                <p class="order-id">Order ID: <span id="orderIdDisplay">AG-2024-0012</span></p>
+                <p>Thank you for your order. We have sent a confirmation email with order details.</p>
+                <div class="confirmation-details">
+                    <p><strong>Estimated Delivery:</strong> 3-5 business days</p>
+                    <p><strong>Payment Method:</strong> M-Pesa</p>
+                    <p><strong>Total Amount:</strong> TZS <span id="orderTotalDisplay">0</span></p>
+                </div>
+                <div class="confirmation-actions">
+                    <button class="btn-print" id="printInvoice">
+                        <i class="fas fa-print"></i> Print Invoice
+                    </button>
+                    <button class="btn-track" id="trackOrder">
+                        <i class="fas fa-shipping-fast"></i> Track Order
+                    </button>
+                    <a href="index.html" class="btn-home">
+                        <i class="fas fa-home"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="export-services">
+        <div class="container">
+            <h2 class="section-title">Export Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>International Shipping</h3>
+                    <p>We facilitate exports to global markets including EU, Asia, and Americas.</p>
+                    <a href="contact.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Export Documentation</h3>
+                    <p>Assistance with all required export documents and certifications.</p>
+                    <a href="contact.html" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Market Connections</h3>
+                    <p>Connect with verified international buyers and distributors.</p>
+                    <a href="contact.html" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgriSolutions Hub</h3>
+                    <p>An educational project by David Bablo Mushii (DIT/E/2024/0021) from Sokoine University of Agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="market.html">Market Updates</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> SUA Mazimbu, Morogoro</li>
+                        <li><i class="fas fa-phone"></i> +255 748 550 225</li>
+                        <li><i class="fas fa-envelope"></i> info@agrisolutionshub.com</li>
+                        <li><i class="fas fa-user-graduate"></i> David Bablo Mushii</li>
+                        <li><i class="fas fa-id-card"></i> DIT/E/2024/0021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriSolutions Hub. Educational Project for Sokoine University of Agriculture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

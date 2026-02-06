@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - AgriSolutions Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-seedling logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>AgriSolutions Hub</h1>
+                        <p>Sokoine University of Agriculture</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="resources.html" class="active"><i class="fas fa-book"></i> Resources</a></li>
+                        <li><a href="market.html"><i class="fas fa-chart-line"></i> Market</a></li>
+                        <li><a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Place Order</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn-signup" id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero" style="background: linear-gradient(rgba(30,86,49,0.9), rgba(30,86,49,0.9)), url('assets/images/resources-hero.jpg');">
+        <div class="container">
+            <h1>Agricultural Resources</h1>
+            <p>Comprehensive guides and information for modern farming</p>
+        </div>
+    </section>
+
+    <section class="resource-categories">
+        <div class="container">
+            <h2 class="section-title">Resource Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" id="crops">
+                    <div class="category-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Guides</h3>
+                    <p>Detailed information on various crops including maize, rice, coffee, beans, and vegetables.</p>
+                    <a href="#crop-resources" class="btn-category">View Crop Guides →</a>
+                </div>
+                <div class="category-card" id="techniques">
+                    <div class="category-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Farming Techniques</h3>
+                    <p>Modern farming methods, irrigation, pest control, and sustainable practices.</p>
+                    <a href="#technique-resources" class="btn-category">Learn Techniques →</a>
+                </div>
+                <div class="category-card" id="tools">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Equipment</h3>
+                    <p>Information about agricultural machinery and modern farming tools.</p>
+                    <a href="#tool-resources" class="btn-category">Browse Tools →</a>
+                </div>
+                <div class="category-card" id="soil">
+                    <div class="category-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Soil & Weather Tips</h3>
+                    <p>Soil management, weather-based agricultural planning, and climate adaptation.</p>
+                    <a href="#soil-resources" class="btn-category">View Tips →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-list" id="crop-resources">
+        <div class="container">
+            <h2 class="section-title">Crop Guides</h2>
+            <div class="resource-items">
+                <div class="resource-item">
+                    <h3><i class="fas fa-corn"></i> Maize Cultivation Guide</h3>
+                    <p>Complete guide to maize farming including planting techniques, fertilizer application, pest control, and harvesting methods. Suitable for Tanzanian climate conditions.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 45 min read</span>
+                        <span><i class="fas fa-download"></i> PDF Available</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Guide →</a>
+                </div>
+                <div class="resource-item">
+                    <h3><i class="fas fa-rice"></i> Rice Farming Techniques</h3>
+                    <p>Comprehensive guide to paddy preparation, water management, and modern rice cultivation methods for high yield production.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 30 min read</span>
+                        <span><i class="fas fa-download"></i> PDF Available</span>
+                    </div>
+                    <a href="#" class="read-more">Learn More →</a>
+                </div>
+                <div class="resource-item">
+                    <h3><i class="fas fa-mug-hot"></i> Coffee Production Guide</h3>
+                    <p>From planting to processing: Complete guide to coffee farming, including Arabica and Robusta varieties suitable for Tanzanian highlands.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 60 min read</span>
+                        <span><i class="fas fa-download"></i> PDF Available</span>
+                    </div>
+                    <a href="#" class="read-more">View Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-list" id="technique-resources" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Farming Techniques</h2>
+            <div class="resource-items">
+                <div class="resource-item">
+                    <h3><i class="fas fa-tint"></i> Drip Irrigation Systems</h3>
+                    <p>Learn how to install and maintain efficient drip irrigation systems for water conservation and increased crop yield.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 25 min read</span>
+                        <span><i class="fas fa-video"></i> Video Tutorial</span>
+                    </div>
+                    <a href="#" class="read-more">View Tutorial →</a>
+                </div>
+                <div class="resource-item">
+                    <h3><i class="fas fa-recycle"></i> Crop Rotation Strategies</h3>
+                    <p>Effective crop rotation patterns to maintain soil health, prevent pest buildup, and improve farm productivity.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 20 min read</span>
+                        <span><i class="fas fa-download"></i> Planning Chart</span>
+                    </div>
+                    <a href="#" class="read-more">Learn Strategies →</a>
+                </div>
+                <div class="resource-item">
+                    <h3><i class="fas fa-bug"></i> Organic Pest Control</h3>
+                    <p>Natural and chemical-free methods to control pests and diseases in your crops while maintaining soil health.</p>
+                    <div class="resource-meta">
+                        <span><i class="fas fa-clock"></i> 35 min read</span>
+                        <span><i class="fas fa-download"></i> Guide Available</span>
+                    </div>
+                    <a href="#" class="read-more">Read Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="resource-list" id="tool-resources">
+        <div class="container">
+            <h2 class="section-title">Tools & Equipment</h2>
+            <div class="equipment-grid">
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h4>Modern Tractors</h4>
+                    <p>Guide to selecting and maintaining farm tractors for different agricultural needs.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-sprinkler"></i>
+                    </div>
+                    <h4>Irrigation Systems</h4>
+                    <p>Various irrigation equipment and their suitability for different farm sizes.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4>Hand Tools</h4>
+                    <p>Essential hand tools for small-scale and medium-scale farming operations.</p>
+                </div>
+                <div class="equipment-card">
+                    <div class="equipment-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h4>Monitoring Equipment</h4>
+                    <p>Weather stations, soil moisture sensors, and other monitoring tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgriSolutions Hub</h3>
+                    <p>An educational project by David Bablo Mushii (DIT/E/2024/0021) from Sokoine University of Agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="market.html">Market Updates</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> SUA Mazimbu, Morogoro</li>
+                        <li><i class="fas fa-phone"></i> +255 748 550 225</li>
+                        <li><i class="fas fa-envelope"></i> info@agrisolutionshub.com</li>
+                        <li><i class="fas fa-user-graduate"></i> David Bablo Mushii</li>
+                        <li><i class="fas fa-id-card"></i> DIT/E/2024/0021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriSolutions Hub. Educational Project for Sokoine University of Agriculture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast - AgriSolutions Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-seedling logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>AgriSolutions Hub</h1>
+                        <p>Sokoine University of Agriculture</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                        <li><a href="market.html"><i class="fas fa-chart-line"></i> Market</a></li>
+                        <li><a href="weather.html" class="active"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                        <li><a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Place Order</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn-signup" id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero" style="background: linear-gradient(rgba(30,86,49,0.9), rgba(30,86,49,0.9)), url('assets/images/weather-hero.jpg');">
+        <div class="container">
+            <h1>Weather Forecast</h1>
+            <p>Accurate weather information for agricultural planning</p>
+        </div>
+    </section>
+
+    <section class="current-weather">
+        <div class="container">
+            <div class="weather-header">
+                <h2 class="section-title">Current Weather - Morogoro, Tanzania</h2>
+                <div class="location-selector">
+                    <select id="locationSelect">
+                        <option value="morogoro" selected>Morogoro</option>
+                        <option value="dar">Dar es Salaam</option>
+                        <option value="arusha">Arusha</option>
+                        <option value="mbeya">Mbeya</option>
+                        <option value="dodoma">Dodoma</option>
+                    </select>
+                    <button class="btn-refresh" id="refreshWeather">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+            </div>
+            
+            <div class="current-weather-card">
+                <div class="current-main">
+                    <div class="current-temp">
+                        <div class="temp-value">28°C</div>
+                        <div class="temp-feels">Feels like 30°C</div>
+                    </div>
+                    <div class="current-condition">
+                        <div class="condition-icon">☀️</div>
+                        <div class="condition-text">Partly Cloudy</div>
+                    </div>
+                </div>
+                
+                <div class="current-details">
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <span>Wind: 12 km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <span>Humidity: 65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-cloud-rain"></i>
+                        <span>Rain: 10%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index: 8 (High)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="weather-forecast">
+        <div class="container">
+            <h2 class="section-title">7-Day Weather Forecast</h2>
+            <div class="forecast-grid" id="forecastGrid">
+                <!-- Forecast will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section class="agricultural-advisory">
+        <div class="container">
+            <h2 class="section-title">Agricultural Advisory</h2>
+            <div class="advisory-card">
+                <div class="advisory-header">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Farming Recommendations for This Week</h3>
+                </div>
+                <div class="advisory-content">
+                    <div class="advisory-section">
+                        <h4><i class="fas fa-seedling"></i> Planting Advisory</h4>
+                        <p><strong>Current Conditions:</strong> Good planting weather with adequate soil moisture</p>
+                        <p><strong>Recommended Activities:</strong></p>
+                        <ul>
+                            <li>Plant maize and beans this week (optimal soil moisture)</li>
+                            <li>Transplant vegetable seedlings (tomatoes, onions, cabbages)</li>
+                            <li>Prepare land for rice planting in lowland areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advisory-section">
+                        <h4><i class="fas fa-tint"></i> Irrigation Advisory</h4>
+                        <p><strong>Rain Forecast:</strong> Light rain expected on Wednesday</p>
+                        <p><strong>Recommendations:</strong></p>
+                        <ul>
+                            <li>Reduce irrigation before Wednesday's expected rain</li>
+                            <li>Check and clean irrigation systems</li>
+                            <li>Prepare water harvesting systems for rain collection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advisory-section">
+                        <h4><i class="fas fa-bug"></i> Pest & Disease Advisory</h4>
+                        <p><strong>Current Risk:</strong> Moderate risk of fungal diseases</p>
+                        <p><strong>Preventive Measures:</strong></p>
+                        <ul>
+                            <li>Monitor maize for armyworm activity</li>
+                            <li>Apply fungicides to prevent mildew in humid conditions</li>
+                            <li>Check coffee plants for leaf rust</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="advisory-section">
+                        <h4><i class="fas fa-calendar-alt"></i> Harvesting Advisory</h4>
+                        <p><strong>Optimal Conditions:</strong> Sunny weather from Friday</p>
+                        <p><strong>Recommendations:</strong></p>
+                        <ul>
+                            <li>Harvest mature crops on Friday and Saturday (sunny days)</li>
+                            <li>Dry harvested grains and beans in the sun</li>
+                            <li>Schedule transportation for market delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="soil-moisture">
+        <div class="container">
+            <h2 class="section-title">Soil Moisture & Conditions</h2>
+            <div class="soil-grid">
+                <div class="soil-card">
+                    <div class="soil-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Soil Moisture Level</h3>
+                    <div class="moisture-bar">
+                        <div class="moisture-fill" style="width: 75%;"></div>
+                    </div>
+                    <p>Current: 75% (Good for planting)</p>
+                    <p>Trend: Increasing (due to recent rains)</p>
+                </div>
+                
+                <div class="soil-card">
+                    <div class="soil-icon">
+                        <i class="fas fa-thermometer-half"></i>
+                    </div>
+                    <h3>Soil Temperature</h3>
+                    <div class="temp-display">26°C</div>
+                    <p>Optimal for seed germination</p>
+                    <p>Range: 24°C - 28°C (Ideal for most crops)</p>
+                </div>
+                
+                <div class="soil-card">
+                    <div class="soil-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Soil pH Level</h3>
+                    <div class="ph-display">6.5</div>
+                    <p>Slightly acidic (Good for most crops)</p>
+                    <p>Recommendation: Maintain current pH level</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-calendar">
+        <div class="container">
+            <h2 class="section-title">Agricultural Seasonal Calendar - Morogoro Region</h2>
+            <div class="calendar-grid">
+                <div class="season-card">
+                    <h3>Short Rains Season (Vuli)</h3>
+                    <p><strong>Period:</strong> October - December</p>
+                    <p><strong>Main Activities:</strong></p>
+                    <ul>
+                        <li>Planting of short-season crops</li>
+                        <li>Vegetable cultivation</li>
+                        <li>Land preparation for long rains</li>
+                    </ul>
+                </div>
+                
+                <div class="season-card">
+                    <h3>Long Rains Season (Masika)</h3>
+                    <p><strong>Period:</strong> March - May</p>
+                    <p><strong>Main Activities:</strong></p>
+                    <ul>
+                        <li>Main planting season</li>
+                        <li>Maize, beans, rice planting</li>
+                        <li>Cash crop establishment</li>
+                    </ul>
+                </div>
+                
+                <div class="season-card">
+                    <h3>Dry Season (Kiangazi)</h3>
+                    <p><strong>Period:</strong> June - September</p>
+                    <p><strong>Main Activities:</strong></p>
+                    <ul>
+                        <li>Harvesting and post-harvest handling</li>
+                        <li>Irrigation farming</li>
+                        <li>Land preparation and maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgriSolutions Hub</h3>
+                    <p>An educational project by David Bablo Mushii (DIT/E/2024/0021) from Sokoine University of Agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="market.html">Market Updates</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> SUA Mazimbu, Morogoro</li>
+                        <li><i class="fas fa-phone"></i> +255 748 550 225</li>
+                        <li><i class="fas fa-envelope"></i> info@agrisolutionshub.com</li>
+                        <li><i class="fas fa-user-graduate"></i> David Bablo Mushii</li>
+                        <li><i class="fas fa-id-card"></i> DIT/E/2024/0021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriSolutions Hub. Educational Project for Sokoine University of Agriculture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

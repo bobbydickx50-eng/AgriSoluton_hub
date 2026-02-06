@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSolutions Hub - Complete Agricultural Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-seedling logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>AgriSolutions Hub</h1>
+                        <p>Sokoine University of Agriculture</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="main-nav" id="mainNav">
+                    <ul>
+                        <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                        <li><a href="resources.html"><i class="fas fa-book"></i> Resources</a></li>
+                        <li><a href="market.html"><i class="fas fa-chart-line"></i> Market</a></li>
+                        <li><a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> <a Contact</a></li>
+                        <li><a href="order.html" class="btn-order"><i class="fas fa-shopping-cart"></i> Place Order</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <button class="btn-login" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn-signup" id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-sign-in-alt"></i> Login to AgriSolutions Hub</h2>
+            <form id="loginForm" action="php/login.php" method="POST">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-submit">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="switchToSignup">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-user-plus"></i> Create Account</h2>
+            <form id="signupForm" action="php/register.php" method="POST">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone Number</label>
+                    <input type="tel" id="signupPhone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupCountry">Country</label>
+                    <select id="signupCountry" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="tz" selected>Tanzania</option>
+                        <option value="ke">Kenya</option>
+                        <option value="ug">Uganda</option>
+                        <option value="rw">Rwanda</option>
+                        <option value="za">South Africa</option>
+                        <option value="ng">Nigeria</option>
+                        <option value="gh">Ghana</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <input type="password" id="signupConfirm" name="confirm_password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="terms" required> I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-submit">Create Account</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Empowering Agriculture Through Technology</h2>
+                <p>Connecting Tanzanian farmers to global markets with real-time information, resources, and business opportunities.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn-primary">Explore Features</a>
+                    <a href="market.html" class="btn-secondary">View Market Prices</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-agriculture.jpg" alt="Agricultural Landscape">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number" data-target="2847">0</div>
+                    <div class="stat-label">Active Farmers</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-globe-africa"></i>
+                    <div class="stat-number" data-target="38">0</div>
+                    <div class="stat-label">Countries Served</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Daily Market Updates</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div class="stat-number" data-target="1200">0</div>
+                    <div class="stat-label">Educational Resources</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Our Key Features</h2>
+            <p class="section-subtitle">Comprehensive agricultural solutions for modern farming</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Information</h3>
+                    <p>Detailed guides on various crops including planting techniques, pest control, and harvesting methods.</p>
+                    <a href="resources.html" class="feature-link">Learn More →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Prices</h3>
+                    <p>Real-time agricultural commodity prices from local and international markets.</p>
+                    <a href="market.html" class="feature-link">View Prices →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Weather Updates</h3>
+                    <p>Accurate weather forecasts and agricultural advisories for better planning.</p>
+                    <a href="weather.html" class="feature-link">Check Weather →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Farming Tools</h3>
+                    <p>Information about modern farming equipment and tools for increased productivity.</p>
+                    <a href="resources.html#tools" class="feature-link">Browse Tools →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Business</h3>
+                    <p>Connect with international buyers and explore export opportunities.</p>
+                    <a href="market.html#global" class="feature-link">Explore →</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Connect with other farmers, experts, and agricultural stakeholders.</p>
+                    <a href="about.html#community" class="feature-link">Join Community →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section class="updates">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="updates-grid">
+                <div class="update-card">
+                    <div class="update-date">Mar 15, 2024</div>
+                    <h3>New Maize Hybrid Varieties</h3>
+                    <p>Discover drought-resistant maize varieties that can increase yield by 30% in dry conditions.</p>
+                    <a href="#" class="read-more">Read Article →</a>
+                </div>
+                <div class="update-card">
+                    <div class="update-date">Mar 10, 2024</div>
+                    <h3>Export Opportunities to EU</h3>
+                    <p>New European Union regulations create opportunities for organic product exports from Tanzania.</p>
+                    <a href="#" class="read-more">Learn More →</a>
+                </div>
+                <div class="update-card">
+                    <div class="update-date">Mar 5, 2024</div>
+                    <h3>Agricultural Workshop</h3>
+                    <p>Join our free workshop on modern irrigation techniques at SUA campus on March 25th.</p>
+                    <a href="#" class="read-more">Register Now →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+        <div class="container">
+            <h2 class="section-title">Our Location</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> Sokoine University of Agriculture</h3>
+                    <p><strong>Address:</strong> Mazimbu Campus, Morogoro, Tanzania</p>
+                    <p><strong>Campus:</strong> College of Natural and Applied Sciences</p>
+                    <p><strong>Department:</strong> Informatics and Information Technology</p>
+                    <p><strong>Phone:</strong> +255 748 550 225</p>
+                    <p><strong>Email:</strong> info@agrisolutionshub.com</p>
+                    <p><strong>Hours:</strong> Mon-Fri: 8:00 AM - 5:00 PM</p>
+                    <a href="contact.html" class="btn-primary">Get Directions</a>
+                </div>
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>SUA Mazimbu Campus, Morogoro</p>
+                        <small>Coordinates: -6.8235° S, 37.6607° E</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Partners Section -->
+    <section class="global-partners">
+        <div class="container">
+            <h2 class="section-title">Global Business Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <i class="fas fa-globe"></i>
+                    <span>EU Export Partners</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-ship"></i>
+                    <span>Shipping Logistics</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-handshake"></i>
+                    <span>International Buyers</span>
+                </div>
+                <div class="partner-logo">
+                    <i class="fas fa-certificate"></i>
+                    <span>Quality Certification</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AgriSolutions Hub</h3>
+                    <p>An educational project by David Bablo Mushii (DIT/E/2024/0021) from Sokoine University of Agriculture.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="market.html">Market Updates</a></li>
+                        <li><a href="weather.html">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="resources.html#crops">Crop Guides</a></li>
+                        <li><a href="resources.html#techniques">Farming Techniques</a></li>
+                        <li><a href="resources.html#tools">Tools & Equipment</a></li>
+                        <li><a href="resources.html#soil">Soil Management</a></li>
+                        <li><a href="resources.html#pests">Pest Control</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> SUA Mazimbu, Morogoro</li>
+                        <li><i class="fas fa-phone"></i> +255 748 550 225</li>
+                        <li><i class="fas fa-envelope"></i> info@agrisolutionshub.com</li>
+                        <li><i class="fas fa-user-graduate"></i> David Bablo Mushii</li>
+                        <li><i class="fas fa-id-card"></i> DIT/E/2024/0021</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriSolutions Hub. Educational Project for Sokoine University of Agriculture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
